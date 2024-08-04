@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MtG GoodWords Sentiment Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-img">
+                <img src="static/mtg_goodwords_logo.jpg" alt="GoodWords logo">
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Rate</a></li>
+                <li><a href="#">Database</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="card-image">
+            <p>Card Image Here<br>(if available)</p>
+        </div>
+        <div class="form-container">
+            <form action="/" method="post">
+                <label for="card_name">Name:</label>
+                <input type="text" id="card_name" name="card_name" placeholder="You can search for a card and its rating here as well!">
+                
+                <label for="set">Set:</label>
+                <input type="text" id="set" name="set" placeholder="ex. M24">
+                
+                <label for="rarity">Rare:</label>
+                <input type="text" id="rarity" name="rarity" placeholder="R">
+                
+                <label for="type">Type:</label>
+                <input type="text" id="type" name="type" placeholder="ex. Legendary Creature – Human Wizard">
+                
+                <label for="mana_cost">Mana Cost:</label>
+                <input type="text" id="mana_cost" name="mana_cost" placeholder="ex. {2}{U}">
+                
+                <label for="power">Power:</label>
+                <input type="text" id="power" name="power" placeholder="ex. 1">
+                
+                <label for="toughness">Tough:</label>
+                <input type="text" id="toughness" name="toughness" placeholder="ex. 3">
+                
+                <label for="loyalty">Loyal:</label>
+                <input type="text" id="loyalty" name="loyalty">
+                
+                <label for="defense_counters">Defense Count:</label>
+                <input type="text" id="defense_counters" name="defense_counters">
+                
+                <label for="ability">Ability Text:</label>
+                <textarea id="ability" name="ability" placeholder="Paste the ability text of your card here!"></textarea>
+                
+                <button type="submit">Rate it!</button>
+            </form>
+            {% if result %}
+            <div class="result">
+                <h1>Sentiment Analysis Results</h1>
+                <p>Label: {{ result['label'] }}</p>
+                <p>Score: {{ result['score'] }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>
