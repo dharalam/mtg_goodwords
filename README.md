@@ -1,6 +1,5 @@
 # MTG Goodwords
-![Goodwords logo](static/mtg_goodwords_logo.jpg)  
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+![Goodwords logo](static/mtg_goodwords_logo.jpg)
 
 Hello everyone! I created MTG Goodwords as a personal project for fun that will allow anyone to assess the relative "goodness" of any Magic: the Gathering card given information on it.
 
